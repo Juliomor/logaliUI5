@@ -1,0 +1,27 @@
+<mvc:View controllerName="alight.Employee.controller.MainView"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <HBox >
+                            <Label id = "labelEmployee" text="{i18n>labelEmployee}" class = "sapUiSmallMargin" labelFor="inputEmployee"/>
+                            <Input id = "inputEmployee" maxLength="6" width="200px" class = "sapUiSmallMarginEnd" liveChange="onValidate"/>
+                            <Label id = "labelCountry" text="{i18n>labelCountry}" class = "sapUiSmallMargin" labelFor="slCountry" visible="false"/>
+                            <Select id = "slCountry" forceSelection="false" visible="false">
+                                <items>
+                                    <core:Item key = "US" text = "{i18n>countryUS}" />
+                                    <core:Item key = "UK" text = "{i18n>countryUK}" />
+                                    <core:Item key = "ES" text = "{i18n>countryES}" />
+                                </items>
+                            </Select>
+                        </HBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
