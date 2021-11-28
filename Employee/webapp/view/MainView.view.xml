@@ -45,7 +45,7 @@
                                         </Column>
                                     </columns>
                                     <items>
-                                        <ColumnListItem >
+                                        <ColumnListItem type="Active" press="onPressListItem">
                                             <cells>
                                                 <Label text = "{EmployeeID}"/>
                                                 <Label text = "{FirstName} {LastName}"/>

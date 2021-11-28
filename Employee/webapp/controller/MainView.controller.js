@@ -83,6 +83,14 @@ sap.ui.define([
 
                 oModel.setProperty("/EmployeeId", "");
                 oModel.setProperty("/CountryKey", "");
+            },
+
+            onPressListItem: function (oEvent) {
+                var itemPressed = oEvent.getSource(),
+                    oContext = itemPressed.getBindingContext(),
+                    objectConext = oContext.getObject();
+
+                sap.m.MessageToast.show(objectConext.PostalCode);
             }
         });
     });
