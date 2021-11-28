@@ -1,4 +1,9 @@
 {
     "git.ignoreLimitWarning": true,
-    "[xml].editor.defaultFormatter": "dotjoshjohnson.xml"
+    "[xml].editor.defaultFormatter": "dotjoshjohnson.xml",
+    "bracket-pair-colorizer-2.colors": [
+        "Gold",
+        "Orchid",
+        "LightSkyBlue"
+    ]
 }
