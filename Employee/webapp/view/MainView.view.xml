@@ -57,6 +57,7 @@
                                         </ColumnListItem>
                                     </items>
                                 </Table>
+                                <HBox id = "ordersTable"></HBox>
                             </Panel>
                         </HBox>
                     </content>
