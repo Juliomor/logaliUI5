@@ -19,47 +19,7 @@
                             <Button id = "btnFilter" text="{i18n>btnFilter}" icon="sap-icon://search" press="onPressFilter" class = "sapUiSmallMarginEnd"/>
                             <Button id = "btnClearFilter" text="{i18n>btnClearFilter}" icon="sap-icon://clear-filter" press="onPressClearFilter" class = "sapUiSmallMarginEnd"/>
                         </HBox>
-                        <Button id = "btnShowCity" text="{i18n>showCity}" visible = "{jsonConfig>/visibleBtnShowCity}" press="onShowCity" class = "sapUiSmallMarginBegin"/>
-                        <Button id = "btnHideCity" text="{i18n>hideCity}" visible = "{jsonConfig>/visibleBtnHideCity}" press="onHideCity" class = "sapUiSmallMarginBegin"/>
-                        <HBox>
-                            <Panel>
-                                <Table id = "tableEmployee" items = "{jsonEmployees>/Employees}">
-                                    <columns>
-                                        <Column >
-                                            <header>
-                                                <Label text = "{i18n>tableId}" />
-                                            </header>
-                                        </Column>
-                                        <Column >
-                                            <header>
-                                                <Label text = "{i18n>tableName}" />
-                                            </header>
-                                        </Column>
-                                        <Column >
-                                            <header>
-                                                <Label text = "{i18n>tableCountry}" />
-                                            </header>
-                                        </Column>
-                                        <Column visible = "{jsonConfig>/visibleCity}">
-                                            <header>
-                                                <Label text = "{i18n>tableCity}" />
-                                            </header>
-                                        </Column>
-                                    </columns>
-                                    <items>
-                                        <ColumnListItem type="Active" press="onPressListItem">
-                                            <cells>
-                                                <Label text = "{jsonEmployees>EmployeeID}"/>
-                                                <Label text = "{jsonEmployees>FirstName} {jsonEmployees>LastName}"/>
-                                                <Label text = "{jsonEmployees>Country}"/>
-                                                <Label text = "{jsonEmployees>City}"/>
-                                            </cells>
-                                        </ColumnListItem>
-                                    </items>
-                                </Table>
-                                <HBox id = "ordersTable"></HBox>
-                            </Panel>
-                        </HBox>
+                        <core:Fragment fragmentName = "alight.Employee.fragment.TableEmployee" type = "XML"/>
                     </content>
                 </Page>
             </pages>

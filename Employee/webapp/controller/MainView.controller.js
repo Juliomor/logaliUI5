@@ -77,7 +77,7 @@ sap.ui.define([
                 oModel.setProperty("/CountryKey", "");
             },
 
-            onPressListItem: function (oEvent) {
+            onPressShowOrdersOLD: function (oEvent) {
                 var itemPressed = oEvent.getSource(),
                     oContext = itemPressed.getBindingContext("jsonEmployees"),
                     objectConext = oContext.getObject(),
@@ -155,6 +155,23 @@ sap.ui.define([
                 newTableJSON.bindElement("jsonEmployees>" + oContext.getPath());
 
                 ordersTable.addItem(newTableJSON);
+            },
+
+            onPressShowOrders: function (oEvent) {
+                var iconPressed = oEvent.getSource(),
+                    oContext = iconPressed.getBindingContext("jsonEmployees");
+
+                if (!this._oDialogOrders) {
+                    this._oDialogOrders = sap.ui.xmlfragment("alight.Employee.fragment.DialogOrders", this);
+                    this.getView().addDependent(this._oDialogOrders);
+                }
+
+                this._oDialogOrders.bindElement("jsonEmployees>" + oContext.getPath());
+                this._oDialogOrders.open();
+            },
+
+            onCloseOrders: function () {
+                this._oDialogOrders.close();
             },
 
             onShowCity: function () {
