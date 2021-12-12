@@ -12,28 +12,10 @@ sap.ui.define([
     function (Controller, Filter, FilterOperator) {
         "use strict";
 
-        return Controller.extend("alight.Employee.controller.MainView", {
+        return Controller.extend("alight.Employee.controller.MasterEmployee", {
 
             onInit: function () {
-                var oJSONModelEmpl = new sap.ui.model.json.JSONModel(),
-                    oJSONModelCountries = new sap.ui.model.json.JSONModel(),
-                    oView = this.getView();
-
-                oJSONModelEmpl.loadData("./localService/mockdata/Employees.json", false);
-                oView.setModel(oJSONModelEmpl, "jsonEmployees");
-
-                oJSONModelCountries.loadData("./localService/mockdata/Countries.json", false);
-                oView.setModel(oJSONModelEmpl, "jsonCountries");
-
-                var oJSONModelConfig = new sap.ui.model.json.JSONModel({
-                    visibleID: true,
-                    visibleName: true,
-                    visibleCountry: true,
-                    visibleCity: false,
-                    visibleBtnShowCity: true,
-                    visibleBtnHideCity: false
-                });
-                oView.setModel(oJSONModelConfig, "jsonConfig");
+                this._bus = sap.ui.getCore().getEventBus();
 
             },
 
@@ -188,6 +170,11 @@ sap.ui.define([
                 oJSONModelConfig.setProperty("/visibleCity", false);
                 oJSONModelConfig.setProperty("/visibleBtnShowCity", true);
                 oJSONModelConfig.setProperty("/visibleBtnHideCity", false);
+            },
+
+            showEmployee: function (oEvent) {
+                var path = oEvent.getSource().getBindingContext("jsonEmployees").getPath();
+                this._bus.publish("felxible", "showEmployee", path);
             }
         });
     });

@@ -1,0 +1,25 @@
+<mvc:View controllerName="alight.Employee.controller.MasterEmployee"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true">
+
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <HBox wrap="Wrap">
+                <Label id = "labelEmployee" text="{i18n>labelEmployee}" class = "sapUiSmallMargin" labelFor="inputEmployee"/>
+                <Input id = "inputEmployee" value = "{jsonCountries>/EmployeeId}" maxLength="6" width="200px" class = "sapUiSmallMarginEnd"/>
+                <Label id = "labelCountry" text="{i18n>labelCountry}" class = "sapUiSmallMargin" labelFor="slCountry"/>
+                <Select id = "slCountry" selectedKey="{jsonCountries>/CountryKey}" forceSelection="false" items = "{jsonCountries>/ListCountry}" class = "sapUiSmallMarginEnd">
+                    <items>
+                        <core:Item key = "{jsonCountries>Key}" text = "{jsonCountries>Text}" />
+                    </items>
+                </Select>
+                <Button id = "btnFilter" text="{i18n>btnFilter}" icon="sap-icon://search" press="onPressFilter" class = "sapUiSmallMarginEnd"/>
+                <Button id = "btnClearFilter" text="{i18n>btnClearFilter}" icon="sap-icon://clear-filter" press="onPressClearFilter" class = "sapUiSmallMarginEnd"/>
+            </HBox>
+            <core:Fragment fragmentName = "alight.Employee.fragment.TableEmployee" type = "XML"/>
+        </content>
+    </Page>
+
+
+</mvc:View>

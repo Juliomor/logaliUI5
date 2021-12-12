@@ -45,10 +45,10 @@
     "sap.ui5": {
         "flexEnabled": false,
         "rootView": {
-            "viewName": "alight.Employee.view.MainView",
+            "viewName": "alight.Employee.view.Main",
             "type": "XML",
             "async": true,
-            "id": "MainView"
+            "id": "Main"
         },
         "dependencies": {
             "minUI5Version": "1.60.1",
@@ -98,20 +98,27 @@
             },
             "routes": [
                 {
-                    "name": "RouteMainView",
-                    "pattern": "RouteMainView",
+                    "name": "RouteMain",
+                    "pattern": "RouteMain",
                     "target": [
-                        "TargetMainView"
+                        "TargetMain"
                     ]
                 }
             ],
             "targets": {
-                "TargetMainView": {
+                "TargetMain": {
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewId": "MainView",
-                    "viewName": "MainView"
+                    "viewId": "Main",
+                    "viewName": "Main"
+                },
+                "TargetMasterEmployee": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "MasterEmployee",
+                    "viewName": "MasterEmployee"
                 }
             }
         }
