@@ -4,7 +4,7 @@
     <Panel>
         <Button id = "btnShowCity" text="{i18n>showCity}" visible = "{jsonConfig>/visibleBtnShowCity}" press="onShowCity" class = "sapUiSmallMarginBegin"/>
         <Button id = "btnHideCity" text="{i18n>hideCity}" visible = "{jsonConfig>/visibleBtnHideCity}" press="onHideCity" class = "sapUiSmallMarginBegin"/>
-        <Table id = "tableEmployee" items = "{jsonEmployees>/Employees}">
+        <Table id = "tableEmployee" items = "{odataNorthwind>/Employees}">
             <columns>
                 <Column >
                     <header>
@@ -35,10 +35,10 @@
             <items>
                 <ColumnListItem type="Navigation" press="showEmployee">
                     <cells>
-                        <Label text = "{jsonEmployees>EmployeeID}"/>
-                        <Label text = "{jsonEmployees>FirstName} {jsonEmployees>LastName}"/>
-                        <Label text = "{jsonEmployees>Country}"/>
-                        <Label text = "{jsonEmployees>City}"/>
+                        <Label text = "{odataNorthwind>EmployeeID}"/>
+                        <Label text = "{odataNorthwind>FirstName} {odataNorthwind>LastName}"/>
+                        <Label text = "{odataNorthwind>Country}"/>
+                        <Label text = "{odataNorthwind>City}"/>
                         <core:Icon src="sap-icon://show" press="onPressShowOrders"/>
                     </cells>
                 </ColumnListItem>

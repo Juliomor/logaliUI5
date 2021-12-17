@@ -1,30 +1,32 @@
 sap.ui.define([
-	"sap/ui/core/UIComponent",
-	"sap/ui/Device",
-	"alight/Employee/model/models"
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "alight/Employee/model/models"
 ], function (UIComponent, Device, models) {
-	"use strict";
+    "use strict";
 
-	return UIComponent.extend("alight.Employee.Component", {
+    return UIComponent.extend("alight.Employee.Component", {
 
-		metadata: {
-			manifest: "json"
-		},
+        metadata: {
+            manifest: "json"
+        },
+
+        SapId: "julio.morales@ngahr.com",
 
 		/**
 		 * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
 		 * @public
 		 * @override
 		 */
-		init: function () {
-			// call the base component's init function
-			UIComponent.prototype.init.apply(this, arguments);
+        init: function () {
+            // call the base component's init function
+            UIComponent.prototype.init.apply(this, arguments);
 
-			// enable routing
-			this.getRouter().initialize();
+            // enable routing
+            this.getRouter().initialize();
 
-			// set the device model
-			this.setModel(models.createDeviceModel(), "device");
-		}
-	});
+            // set the device model
+            this.setModel(models.createDeviceModel(), "device");
+        }
+    });
 });

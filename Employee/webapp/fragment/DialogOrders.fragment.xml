@@ -3,7 +3,7 @@
     xmlns = "sap.m">
     <Dialog title = "{i18n>orders}">
         <content>
-            <Table width = "700px" items = "{jsonEmployees>/Orders}">
+            <Table width = "700px" items = "{odataNorthwind>/Orders}">
                 <columns>
                     <Column >
                         <header>
@@ -24,9 +24,9 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Label text = "{jsonEmployees>OrderID}"/>
-                            <Label text = "{jsonEmployees>Freight}"/>
-                            <Label text = "{jsonEmployees>ShipAddress}"/>
+                            <Label text = "{odataNorthwind>OrderID}"/>
+                            <Label text = "{odataNorthwind>Freight}"/>
+                            <Label text = "{odataNorthwind>ShipAddress}"/>
                         </cells>
                     </ColumnListItem>
                 </items>

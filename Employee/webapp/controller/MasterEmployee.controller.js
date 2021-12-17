@@ -140,16 +140,18 @@ sap.ui.define([
             },
 
             onPressShowOrders: function (oEvent) {
+
                 var iconPressed = oEvent.getSource(),
-                    oContext = iconPressed.getBindingContext("jsonEmployees");
+                    oContext = iconPressed.getBindingContext("odataNorthwind");
 
                 if (!this._oDialogOrders) {
                     this._oDialogOrders = sap.ui.xmlfragment("alight.Employee.fragment.DialogOrders", this);
                     this.getView().addDependent(this._oDialogOrders);
                 }
 
-                this._oDialogOrders.bindElement("jsonEmployees>" + oContext.getPath());
+                this._oDialogOrders.bindElement("odataNorthwind>" + oContext.getPath());
                 this._oDialogOrders.open();
+
             },
 
             onCloseOrders: function () {
@@ -173,7 +175,7 @@ sap.ui.define([
             },
 
             showEmployee: function (oEvent) {
-                var path = oEvent.getSource().getBindingContext("jsonEmployees").getPath();
+                var path = oEvent.getSource().getBindingContext("odataNorthwind").getPath();
                 this._bus.publish("felxible", "showEmployee", path);
             }
         });
