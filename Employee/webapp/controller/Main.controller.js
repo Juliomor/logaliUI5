@@ -1,11 +1,13 @@
 // @ts-nocheck
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageBox"
 ],
 	/**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
+     * @param {typeof sap.m.MessageBox} MessageBox
      */
-    function (Controller) {
+    function (Controller, MessageBox) {
         "use strict";
 
         return Controller.extend("alight.Employee.controller.Main", {
@@ -90,7 +92,8 @@ sap.ui.define([
                     this.getView().getModel("incidenceModel").create("/IncidentsSet", body, {
                         success: function () {
                             this.onReadODataIncidence.bind(this)(employeeId);
-                            sap.m.MessageToast.show(oResourceBundle.getText("oDataSaveOK"));
+                            //sap.m.MessageToast.show(oResourceBundle.getText("oDataSaveOK"));
+                            MessageBox.success(oResourceBundle.getText("oDataSaveOK"));
                         }.bind(this),
                         error: function (e) {
                             sap.m.MessageToast.show(oResourceBundle.getText("oDataSaveKO"));
@@ -136,6 +139,8 @@ sap.ui.define([
                         tableIncidence.removeAllContent();
 
                         for (var incidence in data.results) {
+                            data.results[incidence]._ValidateDate = true;
+                            data.results[incidence].EnabledSave = false;
                             var newIndicence = sap.ui.xmlfragment("alight.Employee.fragment.NewIncidence", this.detailEmployeeView.getController());
                             this.detailEmployeeView.addDependent(newIndicence);
                             newIndicence.bindElement("incidenceModel>/" + incidence);
