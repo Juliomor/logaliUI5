@@ -56,8 +56,9 @@
                     <Button text="{i18n>createIncidence}" press="onCreateIncidence"/>
                 </Toolbar>
             </headerToolbar>
-            <Panel id = "tableIncidence" class = "sapsapUiNoContentPadding" backgroundDesign="Transparent">
-
+            <Panel id = "tableIncidence" class = "sapsapUiNoContentPadding" backgroundDesign="Transparent" />
+            <Panel id = "orders" class = "sapsapUiNoContentPadding" backgroundDesign="Transparent" headerText="{i18n>orders}">
+                <core:Fragment fragmentName = "alight.Employee.fragment.TableOrders" type = "XML"/>
             </Panel>
         </Panel>
     </Page>
