@@ -20,6 +20,7 @@ sap.ui.define([
             },
 
             onValidate: function () {
+                /**
                 var inputEmployee = this.getView().byId("inputEmployee"),
                     employeeValue = inputEmployee.getValue(),
                     labelCountry = this.getView().byId("labelCountry"),
@@ -32,6 +33,7 @@ sap.ui.define([
                     labelCountry.setVisible(false);
                     selectCountry.setVisible(false);
                 }
+                 */
             },
 
             onPressFilter: function () {
@@ -177,6 +179,14 @@ sap.ui.define([
             showEmployee: function (oEvent) {
                 var path = oEvent.getSource().getBindingContext("odataNorthwind").getPath();
                 this._bus.publish("felxible", "showEmployee", path);
+            },
+
+            toOrderDetails: function (oEvent) {
+
+                var orderID = oEvent.getSource().getBindingContext("odataNorthwind").getObject().OrderID,
+                    oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+
+                oRouter.navTo("RouteOrderDetails", { OrderID: orderID });
             }
         });
     });
