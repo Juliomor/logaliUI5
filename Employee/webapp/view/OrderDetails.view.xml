@@ -3,7 +3,9 @@
     xmlns:mvc = "sap.ui.core.mvc"
     xmlns:core = "sap.ui.core" 
     xmlns:f = "sap.ui.layout.form" 
-    xmlns:l = "sap.ui.layout" displayBlock = "true">
+    xmlns:l = "sap.ui.layout" 
+    xmlns:sc = "alight.Employee.control" 
+    displayBlock = "true">
 
     <Page>
         <customHeader>
@@ -48,6 +50,10 @@
                             </f:formElements>
                         </f:FormContainer>
                     </f:Form>
+                    <FlexBox class = "sapUiTinyMarginTop">
+                        <sc:Signature id = "signature" />
+                        <Button text = "{i18n>clear}" press = ".onClearSignature" class = "sapUiTinyMarginBegin" />
+                    </FlexBox>
                 </l:Grid>
             </Panel>
         </content>
