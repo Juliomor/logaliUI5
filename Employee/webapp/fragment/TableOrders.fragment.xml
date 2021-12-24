@@ -1,7 +1,7 @@
 <core:FragmentDefinition 
     xmlns:core = "sap.ui.core"
     xmlns = "sap.m">
-    <Table width = "700px" items = "{odataNorthwind>/Orders}">
+    <Table width = "700px" items = "{odataNorthwind>Orders}">
         <columns>
             <Column >
                 <header>

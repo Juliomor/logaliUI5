@@ -1,17 +1,17 @@
 // @ts-nocheck
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "alight/Employee/controller/Base.controller",
     "alight/Employee/model/formatter",
     "sap/m/MessageBox"
 ],
 	/**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     * @param {typeof sap.ui.core.mvc.Controller} Base
      * @param {typeof sap.m.MessageBox} MessageBox
      */
-    function (Controller, formatter, MessageBox) {
+    function (Base, formatter, MessageBox) {
         "use strict";
 
-        return Controller.extend("alight.Employee.controller.EmployeeDetails", {
+        return Base.extend("alight.Employee.controller.EmployeeDetails", {
             formatter: formatter,
             onInit: function () {
                 this._bus = sap.ui.getCore().getEventBus();
@@ -122,6 +122,7 @@ sap.ui.define([
 
             },
 
+            /**
             toOrderDetails: function (oEvent) {
 
                 var orderID = oEvent.getSource().getBindingContext("odataNorthwind").getObject().OrderID,
@@ -129,6 +130,7 @@ sap.ui.define([
 
                 oRouter.navTo("RouteOrderDetails", { OrderID: orderID });
             }
+            */
 
         });
     });
