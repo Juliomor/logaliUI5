@@ -23,13 +23,13 @@ sap.ui.define([
                     oJSONModelLayouts = new sap.ui.model.json.JSONModel(),
                     oView = this.getView();
 
-                oJSONModelEmpl.loadData("./localService/mockdata/Employees.json", false);
+                oJSONModelEmpl.loadData("./model/json/Employees.json", false);
                 oView.setModel(oJSONModelEmpl, "jsonEmployees");
 
-                oJSONModelCountries.loadData("./localService/mockdata/Countries.json", false);
+                oJSONModelCountries.loadData("./model/json/Countries.json", false);
                 oView.setModel(oJSONModelEmpl, "jsonCountries");
 
-                oJSONModelLayouts.loadData("./localService/mockdata/Layouts.json", false);
+                oJSONModelLayouts.loadData("./model/json/Layouts.json", false);
                 oView.setModel(oJSONModelLayouts, "jsonLayouts");
 
                 var oJSONModelConfig = new sap.ui.model.json.JSONModel({
